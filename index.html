@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI AR STEM Tutor</title>
+
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@webxr-input-profiles/motion-controllers/dist/motion-controllers.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>AI AR STEM Tutor</h2>
+
+<button onclick="showHeart()">❤️ Heart</button>
+<button onclick="showAtom()">⚛️ Atom</button>
+<button onclick="showTriangle()">📐 Pythagoras</button>
+<button onclick="showMagnet()">🧲 Magnet</button>
+
+</div>
+
+<div class="info">
+
+<h2 id="title">Select a Topic</h2>
+
+<p id="description">
+Click a topic to see the 3D model and explanation.
+</p>
+
+</div>
+
+
+<a-scene
+embedded
+xr-mode-ui="enabled: true"
+renderer="colorManagement: true;"
+vr-mode-ui="enabled: false"
+webxr="optionalFeatures: hit-test, local-floor;">
+
+<a-assets>
+
+<a-asset-item id="heartModel" src="assets/models/heart.glb"></a-asset-item>
+<a-asset-item id="atomModel" src="assets/models/atomic.glb"></a-asset-item>
+<a-asset-item id="triangleModel" src="assets/models/triangle.glb"></a-asset-item>
+<a-asset-item id="magnetModel" src="assets/models/magnetic.glb"></a-asset-item>
+
+</a-assets>
+
+
+<a-entity id="heart"
+visible="false"
+gltf-model="#heartModel"
+position="0 0 -2"
+scale="0.7 0.7 0.7">
+</a-entity>
+
+<a-entity id="atom"
+visible="false"
+gltf-model="#atomModel"
+position="0 0 -2"
+scale="0.5 0.5 0.5">
+</a-entity>
+
+<a-entity id="triangle"
+visible="false"
+gltf-model="#triangleModel"
+position="0 0 -2"
+scale="0.6 0.6 0.6">
+</a-entity>
+
+<a-entity id="magnet"
+visible="false"
+gltf-model="#magnetModel"
+position="0 0 -2"
+scale="0.6 0.6 0.6">
+</a-entity>
+
+<a-camera position="0 1.6 0"></a-camera>
+
+</a-scene>
+
+<script src="app.js"></script>
+
+</body>
+</html>
